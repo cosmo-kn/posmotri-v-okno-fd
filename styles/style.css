@@ -69,6 +69,8 @@ ol {
   object-fit: cover;
 }
 
+/* БЛОК С ПОЛЯМИ */
+
 .search-form {
   display: flex;
   flex-flow: row nowrap;
@@ -76,11 +78,25 @@ ol {
   align-items: flex-end;
 }
 
+/* ПОЛЕ ВВОДА ГОРОДА  */
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .search-form__fieldset {
+  border: none;
+  align-self: flex-start;
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.3em;
@@ -88,30 +104,127 @@ ol {
 }
 
 .search-form__label {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield {
+  border-style: none;
+  border-block: 1px solid #fff;
+  font-family: inherit;
+  color: #fff;
+  font-size: inherit;
+  line-height: 1em;
+  background-color: transparent;
+  width: 225px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.search-form__label:focus,
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox-list .search-form__label:hover {
+  text-decoration: 1px underline #fff;
+  text-underline-offset: 1px;
+  text-decoration-skip-ink: none;
 }
 
 .search-form__label-text {
 }
 
-.visually-hidden {
+.search-form__textfield::placeholder {
+  color: #ffffffb2;
 }
 
-.search-form__textfield {
-}
+/* ПОЛЕ ВРЕМЯ СУТОК */
 
 .search-form__checkbox-list {
-}
-
-.search-form__checkbox {
+  display: flex;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
+  display: flex;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #fff;
 }
 
+.search-form__pseudo-checkbox::after {
+  display: none;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.search-form__checkbox:active + .search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+/* .search-form__checkbox:focus-visible {
+  outline: 1px solid #fff;
+} */
+
 .button {
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.1em;
+  text-align: center;
+  padding: 6px 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.button:hover {
+  background-color: #545050;
+  cursor: pointer;
+  text-decoration: 1px underline #fff;
+  text-underline-offset: 2px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__submit-button {
+  width: 194px;
 }
 
 /* СЕКЦИЯ СО СПИСКОМ */
@@ -146,6 +259,7 @@ ol {
   display: flex;
   flex-flow: column nowrap;
   gap: 30px;
+  margin-block-end: 30px;
 }
 
 /* Кастомный скроллбар */
@@ -180,10 +294,11 @@ ol {
 }
 
 .content__list-item {
-  padding: 0 3px;
+  padding-inline-end: 3px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: inherit;
 }
@@ -195,8 +310,10 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
-  max-width: 196px;
+  width: 194px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .content__video-card-title {
@@ -204,17 +321,17 @@ ol {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 30px;
-  line-height: 1em;
+  line-height: 1.2em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .content__video-card-description {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.4em;
+  line-height: 16.2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -229,13 +346,12 @@ ol {
   object-position: center;
 }
 
-.more-button-template {
-}
-
-.button {
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .more-button {
+  width: 100%;
 }
 
 .error-template {
