@@ -191,7 +191,7 @@ ol {
   font-size: 18px;
   line-height: 1.1em;
   text-align: center;
-  padding: 6px 0;
+  padding-block: 6px;
   background-color: transparent;
   border: 1px solid #fff;
 }
@@ -237,7 +237,7 @@ ol {
   font-size: 75px;
   line-height: 0.94em;
   text-transform: uppercase;
-  margin-block-end: 24px;
+  margin-block-end: 23px;
 }
 
 .content__accent {
@@ -277,7 +277,6 @@ ol {
 /* ТЕМПЛЕЙТЫ  */
 
 .preloader {
-  position: absolute;
   inset: 0;
 }
 
