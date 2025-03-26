@@ -10,8 +10,8 @@ html {
 
 .page {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -46,8 +46,7 @@ ol {
   grid-column-gap: 30px;
   align-items: end;
   max-width: 1200px;
-  margin-block: 133px;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 /* СЕКЦИЯ C ВИДЕО */
@@ -68,6 +67,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /* БЛОК С ПОЛЯМИ */
@@ -119,7 +119,7 @@ ol {
   font-size: inherit;
   line-height: 1em;
   background-color: transparent;
-  width: 225px;
+  min-width: 225px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -218,7 +218,7 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
+  min-width: 194px;
   align-self: flex-end;
 }
 
@@ -257,7 +257,6 @@ ol {
   display: flex;
   flex-flow: column nowrap;
   gap: 30px;
-  margin-block-end: 30px;
 }
 
 /* Кастомный скроллбар */
@@ -313,7 +312,6 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   width: 194px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -354,4 +352,5 @@ ol {
 
 .more-button {
   width: 100%;
+  margin-block-start: 30px;
 }
